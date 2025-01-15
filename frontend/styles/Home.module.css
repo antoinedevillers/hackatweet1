@@ -1,22 +1,112 @@
-.main {
+.main{
+ display: flex;
+ flex-direction: row;
+ width: 100%;
+ background-color: #151d27;
+ color: #fff;
+}
+
+.leftpart{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  width:25%;
+  height: 100vh;
+  padding: 15px;
+
+}
+.headerLogo{
+  margin-top: 20px
+}
+
+.infosContainerWithLogout{
+  display: flex;
+  flex-direction: column;
+}
+.infosContainer{
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  min-height: 100vh;
-  padding: 4rem 0;
+  margin-bottom: 5px
+  
+}
+.firstnameAndTagContainer{
+  margin-left: 10px;
+
+}
+.firstname{
+  margin:0;
+  font-weight: bold;
+}
+.tag{
+  margin: 0;
+}
+.logoutButton{
+  padding: 7px 30px;
+  background-color: #151d27;
+  color:#fff;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
-.title {
-  line-height: 1.15;
-  font-size: 4rem;
+.middlepart{
+  border: 1px solid #617281 ;
+  border-bottom: transparent;
+  border-top: transparent;
+  width: 45%;
+  
 }
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.topMiddlePart{
+  border-bottom: 1px solid #617281;
+  padding: 20px;
+  width: 100%
 }
-
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
+.inputContainer{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.input{
+  background-color: transparent;
+  width: 80%;
+  height: 50px;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  font-size: medium;
+  color: #fff;
+  border-bottom: 1px solid #617281;
+}
+.input:focus {
+  outline: none;
+}
+.input::placeholder{
+  color: #617281
+}
+.buttonTweetContainer{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 10%;
+}
+.tweetButton{
+  margin-left: 20px;
+  padding: 7px 30px;
+  background-color: #3690ed;
+  border: transparent;
+  border-radius: 30px;
+  color: white;
+  font-weight: 400;
+  cursor: pointer;
+}
+.lengthTweet{
+  margin:0 20px 0 0;
+}
+.rightpart{
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 15px;
 }

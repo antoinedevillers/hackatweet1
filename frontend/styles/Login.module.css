@@ -1,0 +1,71 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff
+  }
+  
+  .title {
+    line-height: 1.15;
+    font-size: 4rem;
+    text-align: center;
+  }
+  
+  .title a {
+    color: #0070f3;
+    text-decoration: none;
+  }
+  
+  .title a:hover, .title a:focus, .title a:active {
+    text-decoration: underline;
+  }
+  .leftpart{     
+      width: 33.33%;            
+      height: 100vh;            
+      background-image: url('/colibri1.jpg');
+      background-size: cover;   
+      background-position: center; 
+      background-repeat: no-repeat; 
+  }
+  .leftpart{
+    width: 33.33%;  
+    height: 100vh;
+    background-color: #151d27;
+  }
+  .middlepart{
+    width: 33.33%;  
+    height: 100vh;
+    background-color: #151d27;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .textContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .signUp{
+    padding: 10px 40px 10px 40px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3690ed;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: medium;
+  }
+  .signIn{
+    padding: 10px 40px 10px 40px;;
+    background-color: transparent;
+    border: 1px solid #fff ;
+    border-radius: 50px;
+    color: #3690ed;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: medium;
+  }
