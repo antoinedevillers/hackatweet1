@@ -50,7 +50,7 @@ router.post('/signin', (req, res) =>  {
   .then(data => {
     if (data && bcrypt.compareSync(String(req.body.password), String(data.password))) {
       console.log(data)
-      res.json({result: true, token: data.token, firstname: data.firstname})
+      res.json({result: true, token: data.token, firstname: data.firstname, id: data._id})
       
     } else {
       res.json({result: false, error: 'User not found'})

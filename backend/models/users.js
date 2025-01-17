@@ -1,6 +1,7 @@
 
 const mongoose = require('mongoose');
 
+
 const userSchema = mongoose.Schema({
  firstname: String,
  username: String,
@@ -8,6 +9,7 @@ const userSchema = mongoose.Schema({
  token: String,
  canLike: Boolean,
  canTweet: Boolean,
+
 });
 
 const User = mongoose.model('users', userSchema);

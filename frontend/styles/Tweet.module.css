@@ -1,0 +1,22 @@
+.tweetContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid #fff;
+}
+.topTweetContainer{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.firstname{
+    margin-left: 10px
+}
+.tagandtime{
+    color: gray;
+    margin-left: 5px
+}
+.contentTweet{
+    margin-bottom: 20px;
+}

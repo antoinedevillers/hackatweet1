@@ -65,4 +65,4 @@ function SignUp({ modalSignUpIsOpen, setModalSignUpIsOpen }) {
     )
 }
 
-export default SignUp
+export default SignUp;

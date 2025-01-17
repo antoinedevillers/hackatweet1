@@ -22,8 +22,9 @@ function SignIn({ modalSignInIsOpen, setModalSignInIsOpen }) {
         .then(res => res.json())
         .then(data => {
             if(data) {
-                console.log(data)
-                dispatch(login({username, firstname: data.firstname, token: data.token}))
+                console.log('data1',data.id)
+                dispatch(login({username, firstname: data.firstname, token: data.token, _id: data.id}))
+                
                 setUsername('');
                 setPassword('');
             }
