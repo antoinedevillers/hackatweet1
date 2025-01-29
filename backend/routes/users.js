@@ -4,8 +4,8 @@ var router = express.Router();
 const User = require('../models/users');
 const {checkBody} = require('../modules/checkBody');
 
-const bcrypt =require('bcrypt');
-const uid2 = require('uid2');
+const bcrypt =require('bcrypt'); //crypte le mdp
+const uid2 = require('uid2'); //pour la création du token
 
 
 
@@ -17,7 +17,11 @@ router.post('/signup', function(req, res) {
     return;
   }
   User.findOne({username: req.body.username}).then(data => {
+
     if (data === null){
+      if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$/.test(req.body.password)) {
+        return res.json({ result: false, error: 'Password must be at least 6 characters and contain both letters and numbers.' });
+      }// condition pour avoir un mot de passe solide
       const hash = bcrypt.hashSync(String(req.body.password), 10);
 
       const newUser = new User({

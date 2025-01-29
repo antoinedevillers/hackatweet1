@@ -12,6 +12,7 @@ function SignUp({ modalSignUpIsOpen, setModalSignUpIsOpen }) {
     const [firstname, setFirstname] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('')
 
     //Fonction pour s'inscrire
     const handleRegister = () => {
@@ -22,13 +23,20 @@ function SignUp({ modalSignUpIsOpen, setModalSignUpIsOpen }) {
         })
         .then(res => res.json())
         .then(data => {
-            if (data) {
-                dispatch(login({firstname, username, token: data.token}))
+            if (data.result) {
+                console.log(data)
+                dispatch(login({firstname, username, token: data.token})) // Ajout des informations de l'utilisateur dans le reducer
+                setUsername('')
+                setFirstname('')
+                setPassword('')
+            } else {
+                setError(data.error)// Affiche message d'erreur si authentification non conforme
                 setUsername('')
                 setFirstname('')
                 setPassword('')
             }
         })
+        .catch((error) => console.error('Fetch error:', error)); 
     }
 
 
@@ -58,6 +66,7 @@ function SignUp({ modalSignUpIsOpen, setModalSignUpIsOpen }) {
                 <input placeholder="Firstname" type= 'text' className={styles.input} onChange={(e) => setFirstname(e.target.value)} value={firstname} ></input>
                 <input placeholder="Username" type= 'text' className={styles.input} onChange={(e) => setUsername(e.target.value)} value={username}></input>
                 <input placeholder="Password" type='password' className={styles.input} onChange={(e) => setPassword(e.target.value)} value={password}></input>
+                <p className={styles.error}>{error}</p>
                 <button className={styles.button} onClick={() => handleRegister()}>Sign Up</button>
             </div>
 

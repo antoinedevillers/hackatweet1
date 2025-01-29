@@ -123,3 +123,9 @@
   height: 100vh;
   padding: 15px;
 }
+
+.trendsDiv{
+
+    background-color: #1B232C;
+    border-radius: 30px;
+}

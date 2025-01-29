@@ -5,7 +5,8 @@ import SignIn from './Signin';
 import SignUp from './Signup';
 
 function Login() {
-
+  
+//Etats qui gère l'ouveture ou fermeture d'une modale pour sign up ou sign in
   const [modalSignUpIsOpen, setModalSignUpIsOpen] = useState(false);
   const [modalSignInIsOpen, setModalSignInIsOpen] = useState(false);
 

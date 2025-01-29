@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 100%;
     padding: 20px;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #617281;
 }
 .topTweetContainer{
     display: flex;
@@ -19,4 +19,16 @@
 }
 .contentTweet{
     margin-bottom: 20px;
+}
+.hashtag {
+    color: #1DA1F2; /* Couleur bleue similaire à celle de Twitter */
+    font-weight: bold;
+    cursor: pointer;
+}
+.iconsContent {
+    display: flex;
+    flex-direction: row;
+}
+.likeCount{
+    margin-right: 10px;
 }

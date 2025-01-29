@@ -1,0 +1,19 @@
+.trend{
+    margin-bottom: 10px;
+    cursor: pointer;
+padding: 20px 30px 20px 30px;
+
+    
+}
+.trend:hover{
+    background-color: #232D3B;
+    
+}
+.trendContent{
+    margin: 0;
+}
+.trendCount {
+    margin: 0;
+    color: gray;
+    font-size: 14px;
+}

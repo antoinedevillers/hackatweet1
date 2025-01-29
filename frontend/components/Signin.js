@@ -11,6 +11,7 @@ function SignIn({ modalSignInIsOpen, setModalSignInIsOpen }) {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('')
 
     //Fonction pour se connecter
     const handleRegister = () => {
@@ -21,12 +22,16 @@ function SignIn({ modalSignInIsOpen, setModalSignInIsOpen }) {
         })
         .then(res => res.json())
         .then(data => {
-            if(data) {
-                console.log('data1',data.id)
-                dispatch(login({username, firstname: data.firstname, token: data.token, _id: data.id}))
-                
+            if(data.result) {
+
+                dispatch(login({username, firstname: data.firstname, token: data.token, _id: data.id})) //Ajout des infos de l'utilisateur dans le reducer    
                 setUsername('');
                 setPassword('');
+            } else {
+                setUsername('');
+                setPassword('');
+                setError(data.error)
+
             }
         })
     }
@@ -53,6 +58,7 @@ function SignIn({ modalSignInIsOpen, setModalSignInIsOpen }) {
                 <h3>Connect to Hackatweet</h3>
                 <input placeholder="Username" type='text' className={styles.input} onChange={(e) => setUsername(e.target.value)} value= {username}></input>
                 <input placeholder="Password" type="password" className={styles.input} onChange={(e) => setPassword(e.target.value)} value = {password}></input>
+                <p className={styles.error}>{error}</p>
                 <button className={styles.button} onClick={() => handleRegister()}>Sign In</button>
             </div>
 

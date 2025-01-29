@@ -1,10 +1,18 @@
-function HeartIcon({ color = 'red', size = 24 }) {
-    return (
+import { useEffect } from "react";
+
+function HeartIcon({ isLiked , onClick}) {
+  //Affiche une icone coeur 
+
+  const color = isLiked ? 'red' : 'white';
+        return (
       <svg
-        width={size}
-        height={size}
+      onClick={onClick}
+      role="button"
+        width={24}
+        height={24}
         viewBox="0 0 24 24"
         fill={color}
+        style={{ cursor: 'pointer' }}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
@@ -13,10 +21,6 @@ function HeartIcon({ color = 'red', size = 24 }) {
                  c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
       </svg>
     );
-  }
-  
-  function LikeButton() {
-    return <HeartIcon color="crimson" size={32} />;
   }
 
   export default HeartIcon;
